@@ -1,0 +1,223 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>submit</title><meta name="generator" content="MATLAB 8.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-03-21"><meta name="DC.source" content="submit.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">function</span> submit()
+  addpath(<span class="string">'./lib'</span>);
+
+  conf.assignmentSlug = <span class="string">'linear-regression'</span>;
+  conf.itemName = <span class="string">'Linear Regression with Multiple Variables'</span>;
+  conf.partArrays = { <span class="keyword">...</span>
+    { <span class="keyword">...</span>
+      <span class="string">'1'</span>, <span class="keyword">...</span>
+      { <span class="string">'warmUpExercise.m'</span> }, <span class="keyword">...</span>
+      <span class="string">'Warm-up Exercise'</span>, <span class="keyword">...</span>
+    }, <span class="keyword">...</span>
+    { <span class="keyword">...</span>
+      <span class="string">'2'</span>, <span class="keyword">...</span>
+      { <span class="string">'computeCost.m'</span> }, <span class="keyword">...</span>
+      <span class="string">'Computing Cost (for One Variable)'</span>, <span class="keyword">...</span>
+    }, <span class="keyword">...</span>
+    { <span class="keyword">...</span>
+      <span class="string">'3'</span>, <span class="keyword">...</span>
+      { <span class="string">'gradientDescent.m'</span> }, <span class="keyword">...</span>
+      <span class="string">'Gradient Descent (for One Variable)'</span>, <span class="keyword">...</span>
+    }, <span class="keyword">...</span>
+    { <span class="keyword">...</span>
+      <span class="string">'4'</span>, <span class="keyword">...</span>
+      { <span class="string">'featureNormalize.m'</span> }, <span class="keyword">...</span>
+      <span class="string">'Feature Normalization'</span>, <span class="keyword">...</span>
+    }, <span class="keyword">...</span>
+    { <span class="keyword">...</span>
+      <span class="string">'5'</span>, <span class="keyword">...</span>
+      { <span class="string">'computeCostMulti.m'</span> }, <span class="keyword">...</span>
+      <span class="string">'Computing Cost (for Multiple Variables)'</span>, <span class="keyword">...</span>
+    }, <span class="keyword">...</span>
+    { <span class="keyword">...</span>
+      <span class="string">'6'</span>, <span class="keyword">...</span>
+      { <span class="string">'gradientDescentMulti.m'</span> }, <span class="keyword">...</span>
+      <span class="string">'Gradient Descent (for Multiple Variables)'</span>, <span class="keyword">...</span>
+    }, <span class="keyword">...</span>
+    { <span class="keyword">...</span>
+      <span class="string">'7'</span>, <span class="keyword">...</span>
+      { <span class="string">'normalEqn.m'</span> }, <span class="keyword">...</span>
+      <span class="string">'Normal Equations'</span>, <span class="keyword">...</span>
+    }, <span class="keyword">...</span>
+  };
+  conf.output = @output;
+
+  submitWithConfiguration(conf);
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> out = output(partId)
+  <span class="comment">% Random Test Cases</span>
+  X1 = [ones(20,1) (exp(1) + exp(2) * (0.1:0.1:2))'];
+  Y1 = X1(:,2) + sin(X1(:,1)) + cos(X1(:,2));
+  X2 = [X1 X1(:,2).^0.5 X1(:,2).^0.25];
+  Y2 = Y1.^0.5 + Y1;
+  <span class="keyword">if</span> partId == <span class="string">'1'</span>
+    out = sprintf(<span class="string">'%0.5f '</span>, warmUpExercise());
+  <span class="keyword">elseif</span> partId == <span class="string">'2'</span>
+    out = sprintf(<span class="string">'%0.5f '</span>, computeCost(X1, Y1, [0.5 -0.5]'));
+  <span class="keyword">elseif</span> partId == <span class="string">'3'</span>
+    out = sprintf(<span class="string">'%0.5f '</span>, gradientDescent(X1, Y1, [0.5 -0.5]', 0.01, 10));
+  <span class="keyword">elseif</span> partId == <span class="string">'4'</span>
+    out = sprintf(<span class="string">'%0.5f '</span>, featureNormalize(X2(:,2:4)));
+  <span class="keyword">elseif</span> partId == <span class="string">'5'</span>
+    out = sprintf(<span class="string">'%0.5f '</span>, computeCostMulti(X2, Y2, [0.1 0.2 0.3 0.4]'));
+  <span class="keyword">elseif</span> partId == <span class="string">'6'</span>
+    out = sprintf(<span class="string">'%0.5f '</span>, gradientDescentMulti(X2, Y2, [-0.1 -0.2 -0.3 -0.4]', 0.01, 10));
+  <span class="keyword">elseif</span> partId == <span class="string">'7'</span>
+    out = sprintf(<span class="string">'%0.5f '</span>, normalEqn(X2, Y2));
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">== Submitting solutions | Linear Regression with Multiple Variables...
+</pre><pre class="codeoutput error">Error using input
+Cannot call INPUT from EVALC.
+
+Error in submitWithConfiguration&gt;promptToken (line 45)
+    reenter = input(prompt, 's');
+
+Error in submitWithConfiguration (line 11)
+    [email token] = promptToken(email, token, tokenFile);
+
+Error in submit (line 45)
+  submitWithConfiguration(conf);
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+function submit()
+  addpath('./lib');
+
+  conf.assignmentSlug = 'linear-regression';
+  conf.itemName = 'Linear Regression with Multiple Variables';
+  conf.partArrays = { ...
+    { ...
+      '1', ...
+      { 'warmUpExercise.m' }, ...
+      'Warm-up Exercise', ...
+    }, ...
+    { ...
+      '2', ...
+      { 'computeCost.m' }, ...
+      'Computing Cost (for One Variable)', ...
+    }, ...
+    { ...
+      '3', ...
+      { 'gradientDescent.m' }, ...
+      'Gradient Descent (for One Variable)', ...
+    }, ...
+    { ...
+      '4', ...
+      { 'featureNormalize.m' }, ...
+      'Feature Normalization', ...
+    }, ...
+    { ...
+      '5', ...
+      { 'computeCostMulti.m' }, ...
+      'Computing Cost (for Multiple Variables)', ...
+    }, ...
+    { ...
+      '6', ...
+      { 'gradientDescentMulti.m' }, ...
+      'Gradient Descent (for Multiple Variables)', ...
+    }, ...
+    { ...
+      '7', ...
+      { 'normalEqn.m' }, ...
+      'Normal Equations', ...
+    }, ...
+  };
+  conf.output = @output;
+
+  submitWithConfiguration(conf);
+end
+
+function out = output(partId)
+  % Random Test Cases
+  X1 = [ones(20,1) (exp(1) + exp(2) * (0.1:0.1:2))'];
+  Y1 = X1(:,2) + sin(X1(:,1)) + cos(X1(:,2));
+  X2 = [X1 X1(:,2).^0.5 X1(:,2).^0.25];
+  Y2 = Y1.^0.5 + Y1;
+  if partId == '1'
+    out = sprintf('%0.5f ', warmUpExercise());
+  elseif partId == '2'
+    out = sprintf('%0.5f ', computeCost(X1, Y1, [0.5 -0.5]'));
+  elseif partId == '3'
+    out = sprintf('%0.5f ', gradientDescent(X1, Y1, [0.5 -0.5]', 0.01, 10));
+  elseif partId == '4'
+    out = sprintf('%0.5f ', featureNormalize(X2(:,2:4)));
+  elseif partId == '5'
+    out = sprintf('%0.5f ', computeCostMulti(X2, Y2, [0.1 0.2 0.3 0.4]'));
+  elseif partId == '6'
+    out = sprintf('%0.5f ', gradientDescentMulti(X2, Y2, [-0.1 -0.2 -0.3 -0.4]', 0.01, 10));
+  elseif partId == '7'
+    out = sprintf('%0.5f ', normalEqn(X2, Y2));
+  end 
+end
+
+##### SOURCE END #####
+--></body></html>
